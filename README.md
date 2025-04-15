@@ -25,7 +25,7 @@ cd MathPath
 
 2. (Optional) Set up a virtual environment:
 ```bash
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate   # Mac/Linux
 venv\Scripts\activate      # Windows
 ```
