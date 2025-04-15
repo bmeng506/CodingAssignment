@@ -10,13 +10,15 @@ def factorial_iterative(n):
     each number in the range. If n is 0, it returns 0. Otherwise, it returns 
     the factorial of n.
     """
+    if not isinstance(n, int):
+        return 'Input must be an integer!' 
+    if n < 0:
+        return 'Input must be a non-negative integer!'
+    
     result = 1
-    if n == 0:
-        return 0
-    else:
-        for i in range(1, n + 1):
-            result *= i
-        return result
+    for i in range(1, n + 1):
+        result *= i
+    return result
     
 def factorial_recursive(n):
     """
@@ -25,6 +27,12 @@ def factorial_recursive(n):
     value n with the value of the factorial of n-1. Once it reaches n is 0,
     it returns 1. 
     """
+    if not isinstance(n, int):
+        return 'Input must be an integer!'
+    if n < 0:
+        return 'Input must be a non-negative integer!'
+    
+    # Base case
     if n == 0:
         return 1
     else: 
@@ -39,9 +47,12 @@ def fibonacci_iterative(n):
     Once it reaches n, it returns b. If n <= 0, it returns an error message. 
     If n is 1, 0 is returned, and if n is 2, 1 is returned.
     """
+    if not isinstance(n, int):
+        return 'Input must be an integer!'
     if n < 0:
         return 'Must be not be negative!'
-    elif n == 0 or n == 1:
+    
+    if n == 0 or n == 1:
         return n
     else: 
         a, b = 0, 1
@@ -57,6 +68,8 @@ def fibonacci_recursive(n): # Function that returns nth number in the fibonacci 
     case, it returns n, which is either 0 or 1. The function throws an error 
     message when n < 0.
     """
+    if not isinstance(n, int):
+        return 'Input must be an integer!'
     if n < 0:
         return 'Must be not be negative!'
     elif n <= 1:
@@ -68,11 +81,16 @@ def fibonacci_recursive(n): # Function that returns nth number in the fibonacci 
 def gcd_iterative(a, b):
     """
     A function that returns the greatest common divisor of two integers a and b 
-    using an iterative version of Euler's algorithm. If either a or b is 0, it 
-    returns the other number. If not, the function iteratively updates a to b 
-    and b to the remainder of a divided by b (a % b) until b becomes 0, and 
-    returns a.
+    using an iterative version of Euler's algorithm. A and b are both made 
+    positive. If either a or b is 0, it returns the other number. If not, the 
+    function iteratively updates a to b and b to the remainder of a divided by b
+    (a % b) until b becomes 0, and returns a.
     """
+    if not isinstance(a, int) or not isinstance(b, int):
+        return 'Inputs must be an integers!'
+
+    a, b = abs(a), abs(b) # Make sure a and b are positive    
+
     if a == 0 or b == 0:
         return a or b
     while b != 0:
@@ -82,10 +100,15 @@ def gcd_iterative(a, b):
 def gcd_recursive(a, b): # Function that returns the greatest common divisor of two numbers
     """
     A function that returns the greatest common divisor of two numbers a and b
-    using a recursive approach, similar to the function above. If either a or b 
-    is 0, it returns the other number. It calls itself with b and the remainder 
-    of a divided by b (a % b) until either value is 0.  
+    using a recursive approach, similar to the function above. A and b are 
+    firstly made positive. If either a or b is 0, it returns the other number. 
+    It calls itself with b and the remainder of a divided by b (a % b) until 
+    either value is 0.  
     """
+    if not isinstance(a, int) or not isinstance(b, int):
+        return 'Inputs must be an integers!'
+    
+    a, b = abs(a), abs(b) # Make sure a and b are positive
     if a == 0 or b == 0:
         return a or b
     return gcd_recursive(b, a % b)
