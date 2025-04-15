@@ -8,3 +8,16 @@ A creative Python project that implements the factorial, Fibonacci, and GCD math
 - Factorial (iterative & recursive)
 - Fibonacci (iterative & recursive)
 - Greatest Common Divisor using Euclid's  (iterative & recursive)
+- Proper error handling with exceptions
+- Comprehensive & edge testing with `pytest`
+
+---
+
+## How to Use
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/bmeng506/MathPath.git
+cd MathPath
