@@ -1,1 +1,1 @@
-# Algo Wiz
+# Math Path
