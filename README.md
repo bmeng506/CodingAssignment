@@ -44,7 +44,7 @@ or
 ```bash
 python -m pytest tests/test_functions.py
 ```
-NOTE: Look in test_functions.py for more information on how to run unit tests.
+**NOTE**: Look in test_functions.py for more information on how to run unit tests.
 
 ## About the Creator
 Hi! I'm Brian, a first-year university student studying Computer Science and Mathematical Economics. I am passionate about computer science, math, and building new things :)
@@ -56,6 +56,6 @@ This project reflects my love for programming and math. I had a lot of fun build
 This project sprung out of a coding challenge and demonstrates not only how I code, but also how I think, design, and make my work unique!
 
 ### Contact
-Feel free to reach out or connect with me!
-Email: bmeng@sas.upenn.edu
+Feel free to reach out or connect with me!\
+Email: bmeng@sas.upenn.edu\
 Github: @bmeng506
