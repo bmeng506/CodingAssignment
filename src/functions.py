@@ -95,7 +95,7 @@ def fibonacci_rec(n): # Function that returns nth number in the fibonacci sequen
 def gcd_iter(a, b):
     """
     A function that returns the greatest common divisor of two integers a and b 
-    using an iterative version of Euler's algorithm. A and b are both made 
+    using an iterative version of Euclid's algorithm. A and b are both made 
     positive. If either a or b is 0, it returns the other number. If not, the 
     function iteratively updates a to b and b to the remainder of a divided by b
     (a % b) until b becomes 0, and returns a.
@@ -118,10 +118,10 @@ def gcd_iter(a, b):
 def gcd_rec(a, b): # Function that returns the greatest common divisor of two numbers
     """
     A function that returns the greatest common divisor of two numbers a and b
-    using a recursive approach, similar to the function above. A and b are 
-    firstly made positive. If either a or b is 0, it returns the other number. 
-    It calls itself with b and the remainder of a divided by b (a % b) until 
-    either value is 0.  
+    using a recursive approach of Euclid's algorithm, similar to the function 
+    above. A and b are firstly made positive. If either a or b is 0, it returns 
+    the other number. It calls itself with b and the remainder of a divided by b 
+    (a % b) until either value is 0.  
 
     NOTE: See previous function.
     """
