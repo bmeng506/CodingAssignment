@@ -21,3 +21,10 @@ A creative Python project that implements the factorial, Fibonacci, and GCD math
 ```bash
 git clone https://github.com/bmeng506/MathPath.git
 cd MathPath
+
+2. (Optional) Set up a virtual environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+
