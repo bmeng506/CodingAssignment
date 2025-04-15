@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathPath</title>
+    <style src="/static/style.css"></style>
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <h1>Welcome to Math Path!</h1>
+    <p>
+        Select a function and try it out!
+    </p>
+
+    <div>
+        <h3>Factorial</h3>
+        <input type="number" id="factorial-input" placeholder="Enter a number">
+        <label>
+            <input type="checkbox" id="factorial-rec" checked> Recursive?
+        </label><br>
+        <button onclick= "getFactorial()" id="factorialButton">
+            Calculate Factorial
+        </button>
+        <p id="factorial-result"></p>
+    </div>
+    <div>
+        <h3>Fibonacci</h3>
+        <input type="number" id="fibonacci-input" placeholder="Enter a number">
+        <label>
+            <input type="checkbox" id="fibonacci-rec" checked> Recursive?
+        </label><br>
+        <button onclick= "getFibonacci()" id="fibonacciButton">
+            Calculate Fibonacci Number
+        </button>
+        <p id="fibonacci-result"></p>
+    </div>
+    <div>
+        <h3>Greatest Common Divisor</h3>
+        <input type="number" id="gcd-a" placeholder="Enter first number">
+        <input type="number" id="gcd-b" placeholder="Enter second number">
+        <label>
+            <input type="checkbox" id="gcd-rec" checked> Recursive?
+        </label><br>
+        <button onclick= "getGCD()" id="gcdButton">
+            Calculate GCD
+        </button>
+        <p id="gcd-result"></p>
+    </div>
+</body>
+</html>

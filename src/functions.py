@@ -132,5 +132,3 @@ def gcd_rec(a, b): # Function that returns the greatest common divisor of two nu
     if a == 0 or b == 0:
         return a or b
     return gcd_rec(b, a % b)
-
-print(gcd_rec(-5, 5))
