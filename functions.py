@@ -67,11 +67,11 @@ def fibonacci_recursive(n): # Function that returns nth number in the fibonacci 
 # gcd functions
 def gcd_iterative(a, b):
     """
-    A function that returns the greatest common divisor of two numbers a and b
-    using Euler's algorithm. It uses a while loop to repeatedly set a to b and b
-    to the remainder of a divided by b until b is 0. The function then returns
-    the value of a, which is the GCD. If either a or b is 0, it returns the 
-    other number. 
+    A function that returns the greatest common divisor of two integers a and b 
+    using an iterative version of Euler's algorithm. If either a or b is 0, it 
+    returns the other number. If not, the function iteratively updates a to b 
+    and b to the remainder of a divided by b (a % b) until b becomes 0, and 
+    returns a.
     """
     if a == 0 or b == 0:
         return a or b
@@ -80,10 +80,14 @@ def gcd_iterative(a, b):
     return a
     
 def gcd_recursive(a, b): # Function that returns the greatest common divisor of two numbers
-    if a == 0:
-        return b
-    elif b == 0:
-        return a
-    else:
-        return gcd_recursive(b, a % b)
+    """
+    A function that returns the greatest common divisor of two numbers a and b
+    using a recursive approach, similar to the function above. If either a or b 
+    is 0, it returns the other number. It calls itself with b and the remainder 
+    of a divided by b (a % b) until either value is 0.  
+    """
+    if a == 0 or b == 0:
+        return a or b
+    return gcd_recursive(b, a % b)
 
+print(gcd_recursive(-5, 5))
