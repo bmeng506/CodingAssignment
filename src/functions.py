@@ -100,10 +100,14 @@ def gcd_iter(a, b):
     function iteratively updates a to b and b to the remainder of a divided by b
     (a % b) until b becomes 0, and returns a.
 
-    NOTE: The function throws a TypeError if a or b is not an integer.
-    This function allows for negative numbers, but turns the inputs into 
-    positive numbers. 
+    NOTE: The function throws a TypeError if a or b is not an integer, and a 
+    ValueError if either a or b is None. This function allows for negative 
+    numbers, but turns the inputs into positive numbers. 
     """
+
+    if a is None or b is None:
+        raise ValueError('Both numbers must be provided!')
+    
     if not isinstance(a, int) or not isinstance(b, int):
         raise TypeError('Inputs must integers!')
 
@@ -125,6 +129,10 @@ def gcd_rec(a, b): # Function that returns the greatest common divisor of two nu
 
     NOTE: See previous function.
     """
+    
+    if a is None or b is None:
+        raise ValueError('Both numbers must be provided!')
+    
     if not isinstance(a, int) or not isinstance(b, int):
         raise TypeError('Inputs must be integers!')
     

@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from typing import Optional
 from src.functions import *
 
 app = FastAPI(
@@ -35,7 +36,10 @@ def get_fibonacci(n: int, recursive: bool = False):
         raise HTTPException(status_code=400, detail=str(e))
     
 @app.get("/gcd")
-def get_gcd(a: int, b: int, recursive: bool = False):
+def get_gcd(a: Optional[int] = None, b: Optional[int] = None, recursive: bool = False):
+    if a is None or b is None:
+        raise HTTPException(status_code=400, 
+                            detail="Both numbers must be provided!")
     try:
         result = gcd_rec(a, b) if recursive else gcd_iter(a, b)
         return {"a": a, "b": b, "gcd": result, "recursive": recursive}

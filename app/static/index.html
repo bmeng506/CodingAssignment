@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathPath</title>
-    <style src="/static/style.css"></style>
-    <script src="/static/script.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <h1>Welcome to Math Path!</h1>
@@ -37,15 +36,18 @@
     </div>
     <div>
         <h3>Greatest Common Divisor</h3>
-        <input type="number" id="gcd-a" placeholder="Enter first number">
-        <input type="number" id="gcd-b" placeholder="Enter second number">
-        <label>
-            <input type="checkbox" id="gcd-rec" checked> Recursive?
-        </label><br>
-        <button onclick= "getGCD()" id="gcdButton">
-            Calculate GCD
-        </button>
+            <input type="number" id="gcd-a" placeholder="Enter first number" required>
+            <input type="number" id="gcd-b" placeholder="Enter second number" required>
+            <br>
+            <label>
+                <input type="checkbox" id="gcd-rec" checked> Recursive?
+            </label><br>
+            <button onclick= "getGCD()" id="gcdButton">
+                Calculate GCD
+            </button>
         <p id="gcd-result"></p>
     </div>
+    
+<script src="/static/script.js"></script>
 </body>
 </html>
