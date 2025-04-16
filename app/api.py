@@ -9,7 +9,9 @@ app = FastAPI(
     description="Explore math functions with FastAPI"
 )
 
-app.mount("/static", StaticFiles(directory="app/static", html=True),name="static")
+app.mount("/static", StaticFiles(directory="app/static", 
+                                 html=True), 
+                                 name="static")
 
 @app.get("/")
 def read_index():
@@ -36,13 +38,22 @@ def get_fibonacci(n: int, recursive: bool = False):
         raise HTTPException(status_code=400, detail=str(e))
     
 @app.get("/gcd")
-def get_gcd(a: Optional[int] = None, b: Optional[int] = None, recursive: bool = False):
-    if a is None or b is None:
-        raise HTTPException(status_code=400, 
-                            detail="Both numbers must be provided!")
+def get_gcd(a: str = None, b: str = None, recursive: bool = False):
+    if not a or not b:
+        raise HTTPException(status_code=400,
+                             detail="Both numbers must be provided!")
+
     try:
-        result = gcd_rec(a, b) if recursive else gcd_iter(a, b)
-        return {"a": a, "b": b, "gcd": result, "recursive": recursive}
+        a_int = int(a)
+        b_int = int(b)
+    except ValueError:
+        raise HTTPException(status_code=400, 
+                            detail="Inputs must be valid integers!")
+
+    try:
+        result = gcd_rec(a_int, b_int) if recursive else gcd_iter(a_int, b_int)
+        return {"a": a_int, "b": b_int, "gcd": result, "recursive": recursive}
     except (ValueError, TypeError) as e:
         raise HTTPException(status_code=400, detail=str(e))
+
     
