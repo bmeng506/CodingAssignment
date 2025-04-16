@@ -72,7 +72,9 @@ def fibonacci_iter(n):
             a, b = b, a + b
         return b
 
-def fibonacci_rec(n): # Function that returns nth number in the fibonacci sequence
+memo_fib_rec = {} # Dictionary to store previously calculated fibonacci numbers
+
+def fibonacci_rec(n, memo=False): # Function that returns nth number in the fibonacci sequence
     """
     A function that returns the nth number in the fibonacci sequence using a 
     recursive approach. It calls itself using n-1 and n-2, adding the two 
@@ -80,16 +82,25 @@ def fibonacci_rec(n): # Function that returns nth number in the fibonacci sequen
     case, it returns n, which is either 0 or 1. The function throws an error 
     message when n < 0.
 
-    NOTE: See previous function.        
+    NOTE: See previous function.
+    NOTE pt.2: Includes a memoization feature to store previously calculated 
+    values. This is mostly used in the application to show the effectiveness of
+    memoization in shrinking down time.      
     """
+
     if not isinstance(n, int):
         raise TypeError('Input must be an integer!')
     if n < 0:
         raise ValueError('Must be not be negative!')
+    
+    if memo and n in memo_fib_rec:
+        return memo_fib_rec[n]
     elif n <= 1:
         return n
     else:
-        return fibonacci_rec(n-1) + fibonacci_rec(n-2)
+        result = fibonacci_rec(n-1) + fibonacci_rec(n-2)
+    memo_fib_rec[n] = result 
+    return result 
 
 # gcd functions
 def gcd_iter(a, b):

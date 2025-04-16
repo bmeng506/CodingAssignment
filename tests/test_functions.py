@@ -74,7 +74,7 @@ def test_gcd_iter():
     assert gcd_iter(0, 1) == 1
     assert gcd_iter(1, 0) == 1
     assert gcd_iter(-1, -1) == 1
-    with pytest.raises(TypeError, match="Inputs must integers!"):
+    with pytest.raises(TypeError, match="Inputs must be integers!"):
         gcd_iter('x', 'y')
     with pytest.raises(ValueError, match="Both numbers must be provided!"):
         gcd_iter(4, None)
@@ -92,7 +92,7 @@ def test_gcd_rec():
     assert gcd_rec(0, 1) == 1
     assert gcd_rec(1, 0) == 1
     assert gcd_rec(-1, -1) == 1
-    with pytest.raises(TypeError, match="Inputs must integers!"):
+    with pytest.raises(TypeError, match="Inputs must be integers!"):
         gcd_iter('x', 'y')
     with pytest.raises(ValueError, match="Both numbers must be provided!"):
         gcd_iter(4, None)
