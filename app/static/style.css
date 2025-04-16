@@ -61,14 +61,12 @@ button:hover {
     background-color: #007a2d;
 }
 
-/* Result Output */
 p[id$="-result"] {
     font-weight: bold;
     font-size: 1.1rem;
     margin-top: 1rem;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 600px) {
     input[type="number"] {
         width: 90%;

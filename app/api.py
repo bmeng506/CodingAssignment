@@ -1,13 +1,18 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from typing import Optional
 from src.functions import *
+
+"""
+This file uses FastAPI to create APIs that connect the Python backend code to an
+HTML/CSS webpage for full functionality.
+"""
 
 app = FastAPI(
     title="MathPath API", 
     description="Explore math functions with FastAPI"
 )
+
 
 app.mount("/static", StaticFiles(directory="app/static", 
                                  html=True), 
@@ -42,14 +47,12 @@ def get_gcd(a: str = None, b: str = None, recursive: bool = False):
     if not a or not b:
         raise HTTPException(status_code=400,
                              detail="Both numbers must be provided!")
-
     try:
         a_int = int(a)
         b_int = int(b)
     except ValueError:
         raise HTTPException(status_code=400, 
-                            detail="Inputs must be valid integers!")
-
+                            detail="Inputs must be integers!")
     try:
         result = gcd_rec(a_int, b_int) if recursive else gcd_iter(a_int, b_int)
         return {"a": a_int, "b": b_int, "gcd": result, "recursive": recursive}

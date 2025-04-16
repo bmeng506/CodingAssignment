@@ -109,7 +109,7 @@ def gcd_iter(a, b):
         raise ValueError('Both numbers must be provided!')
     
     if not isinstance(a, int) or not isinstance(b, int):
-        raise TypeError('Inputs must integers!')
+        raise TypeError('Inputs must be integers!')
 
     a, b = abs(a), abs(b) # Make sure a and b are positive    
 
