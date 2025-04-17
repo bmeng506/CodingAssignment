@@ -9,7 +9,7 @@ def test_factorial_iter():
     """
     This and below are tests for the iterative and recursive factorial 
     functions. The tests in order are: ordinary case, 0th case (edge case), 
-    ValueError case, TypeError case, and 1st case (edge case). 
+    ValueError case, TypeError case, no-input case, and 1st case (edge case). 
     """
     assert factorial_iter(5) == 120
     assert factorial_iter(0) == 1

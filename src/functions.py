@@ -15,6 +15,8 @@ def factorial_iter(n):
     The factorial of 0 is defined to be 1, so the function returns 1 in this
     case.
     """
+    if n is None:
+        raise ValueError('Number must be provided!')
     if not isinstance(n, int):
         raise TypeError('Input must be an integer!')  
     if n < 0:
@@ -34,6 +36,8 @@ def factorial_rec(n):
 
     NOTE: See previous function.
     """
+    if n is None:
+        raise ValueError('Number must be provided!')
     if not isinstance(n, int):
         raise TypeError('Input must be an integer!')  
     if n < 0:
