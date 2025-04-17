@@ -76,7 +76,7 @@ def fibonacci_iter(n):
 
 memo_fib_rec = {} # Dictionary to store previously calculated fibonacci numbers
 
-def fibonacci_rec(n, memo): # Function that returns nth number in the fibonacci sequence
+def fibonacci_rec(n, memo = False): 
     """
     A function that returns the nth number in the fibonacci sequence using a 
     recursive approach. It calls itself using n-1 and n-2, adding the two 
@@ -85,7 +85,8 @@ def fibonacci_rec(n, memo): # Function that returns nth number in the fibonacci 
     message when n < 0.
 
     NOTE: See previous function.
-    NOTE pt.2: Includes a memoization feature to store previously calculated 
+    
+    Includes a memoization feature to store previously calculated 
     values. This is mostly used in the application to show the effectiveness of
     memoization in shrinking down time.      
     """

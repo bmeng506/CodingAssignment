@@ -46,10 +46,19 @@ python -m pytest tests/test_functions.py
 ```
 **NOTE**: Look in test_functions.py for more information on how to run unit tests.
 
+
+### Running Web App
+To run and launch the web app locally:
+```bash
+uvicorn app.api:app --reload
+```
+
+# Part II: Clarity LLM
+
 ## About the Creator
 Hi! I'm Brian, a first-year university student studying Computer Science and Mathematical Economics. I am passionate about computer science, math, and building new things :)
 
-This project reflects my love for programming and math. I had a lot of fun building this project and hope it is fun to use!
+The Web App reflects my love for programming and math. I had a lot of fun building this project and hope it is just as fun to use!
 
 ### Inspiration 
 

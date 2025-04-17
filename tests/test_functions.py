@@ -55,7 +55,7 @@ def test_fibonacci_rec():
     """
     See above for test information.
     """
-    assert fibonacci_rec(5) == 5
+    assert fibonacci_rec(5, False) == 5
     assert fibonacci_rec(0) == 0
     assert fibonacci_rec(1) == 1
     with pytest.raises(ValueError, match="Must be not be negative!"):
