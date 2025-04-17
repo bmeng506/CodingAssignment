@@ -9,7 +9,6 @@ Your goal is to help people:
  - Use a kind, conversational tone
  - Utilize and follow the following Python guidelines: `clarity_guidelines.md`
 
-Please help review these files! Thank you!
+Please help review this file! Thank you!
 
-`good_example.py`
 `bad_example.py`

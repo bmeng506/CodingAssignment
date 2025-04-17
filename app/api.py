@@ -104,16 +104,19 @@ def get_fibonacci(n: str, recursive: bool = False, memo: bool = False):
     reducing time (seen through the runtime). 
     """
 
+    # Get the start time
     start_time = time.time()
 
     if not n:
         raise HTTPException(status_code=400, detail="Number must be provided!")
     try:
+        # Cast n into an int.
         n_int = int(n)
         result = fibonacci_rec(n_int, memo) if recursive else fibonacci_iter(n_int)
     except (ValueError, TypeError) as e:
         raise HTTPException(status_code=400, detail=str(e))
     
+    # Calculate ending time in milliseconds
     runtime = round((time.time() - start_time) * 1000, 4)
     
     return {"number": n, 
@@ -140,6 +143,8 @@ def get_gcd(a: str, b: str, recursive: bool = False):
     NOTE: The inputs a and b are strings that are converted to integers due to
     errors similar to issues with the functions above.
     """
+
+    # Get the start time
     start_time = time.time()
     
     if not a or not b:
@@ -149,17 +154,19 @@ def get_gcd(a: str, b: str, recursive: bool = False):
         a_int = int(a)
         b_int = int(b)
         result = gcd_rec(a_int, b_int) if recursive else gcd_iter(a_int, b_int)
-        runtime = round((time.time() - start_time) * 1000, 4)
     except (ValueError, TypeError) as e:
         raise HTTPException(status_code=400, detail=str(e))
             
+     # Calculate ending time in milliseconds
+    runtime = round((time.time() - start_time) * 1000, 4)
+
     return {"a": a_int, 
             "b": b_int, 
             "gcd": result, 
             "recursive": recursive, 
             "runtime": runtime}
    
-    
+
 
 
     

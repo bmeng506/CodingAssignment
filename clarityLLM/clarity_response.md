@@ -237,6 +237,6 @@ if __name__ == "__main__":
 ```
 ---
 
-## Final Thoughts from Clarity
+## Final Review and Thoughts from Clarity
 
-You're off to a strong start! With just a few changes in naming, documentation, and validation, your code can become super clean and production-ready. Let me know if you'd like help adding tests or exploring edge cases next!
+You're off to a strong start! With just a few changes in the areas I mentioned, your code can become super clean and strong! Let me know if you need help with any other Python review!
