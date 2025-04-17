@@ -18,12 +18,16 @@ These important guidelines will help ensure that your code is readable, effectiv
 - Use iteration instead of recursion, unless recursion produces more clear code.
 - Clearly define base cases and use proper comments if using recursion.
 
-## 4. Testing and Robustness
+## 4. Testing and Strength
 - Include meaningful and unique test cases; don't be testing the same thing over and over.
 - Functions should validate all user inputs (of any form) and return proper error messages.
 - Failing early and clearly is preferred (ex: `raise ValueError`)
 
-## 5. Documentation and Comments
+## 5. Handling Errors
+- Use `try/catch/except` blocks to properly respond to errors. 
+- No bare `except` clauses.
+
+## 6. Documentation and Comments
 - Use docstrings to explain functions, inline comments to explain tricky or complex lines.
 - Follow this format for docstrings: 
 ```python
@@ -39,17 +43,17 @@ These important guidelines will help ensure that your code is readable, effectiv
         """
         sum = 0
 
-        for i in range(1, n+1):
+        for i in range(1, n+1): # (Use inline comments to explain certain lines) Iterating through numbers from 1 to n...
             sum += i
 
         return sum
+```
 
-
-## 6. Style and Formatting
+## 7. Formatting and Style
 - Follow PEP8.
 - Use 4 spaces per indent.
-- Limit lines to 79 characters.
-- Use f-strings for embedding and formatting.
+- Try to limit lines to 80 characters or less, a little over is okay. Do not strangely wrap text to fit in the limit.
+- Use f-strings for embedding and formatting (f"Text {variable}")
 
 ---
 
