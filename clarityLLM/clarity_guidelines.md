@@ -40,6 +40,9 @@ These important guidelines will help ensure that your code is readable, effectiv
 
         Returns:
         - (type) int: (Explain what the function returns) Returns sum of numbers...
+
+        Raises:
+        - (list errors if they occur)
         """
         sum = 0
 
@@ -53,7 +56,7 @@ These important guidelines will help ensure that your code is readable, effectiv
 - Follow PEP8.
 - Use 4 spaces per indent.
 - Try to limit lines to 80 characters or less, a little over is okay. Do not strangely wrap text to fit in the limit.
-- Use f-strings for embedding and formatting (f"Text {variable}")
+- Use f-strings for embedding and formatting (`f"Text {variable}"`)
 
 ---
 

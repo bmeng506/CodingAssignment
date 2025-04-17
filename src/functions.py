@@ -3,7 +3,7 @@ This file contains implementation of the factorial, fibonacci, and greatest
 common divisor (GCD) functions using both iterative and recursive approaches. 
 """
 
-def factorial_iter(n):
+def factorial_iter(n: int):
     """
     Function that returns the factorial of a number n using an iterative 
     approach. It iterates from 1 to n, multiplying the result (initially 1) by
@@ -27,7 +27,7 @@ def factorial_iter(n):
         result *= i
     return result
     
-def factorial_rec(n):
+def factorial_rec(n: int):
     """
     A function that returns the factorial of a number n using a recursive 
     approach. It calls itself with n-1 until n is 0, multiplying the current 
@@ -49,8 +49,7 @@ def factorial_rec(n):
     else: 
         return n * factorial_rec(n-1)
     
-# fibonacci functions
-def fibonacci_iter(n):
+def fibonacci_iter(n: int):
     """
     A function that returns the nth number in the fibonacci sequence using an 
     iterative approach. It creates two variables a and b, intialized to 0 and 1.
@@ -80,7 +79,7 @@ def fibonacci_iter(n):
 
 memo_fib_rec = {} # Dictionary to store previously calculated fibonacci numbers
 
-def fibonacci_rec(n, memo = False): 
+def fibonacci_rec(n: int, memo: bool = False): 
     """
     A function that returns the nth number in the fibonacci sequence using a 
     recursive approach. It calls itself using n-1 and n-2, adding the two 
@@ -110,8 +109,7 @@ def fibonacci_rec(n, memo = False):
     memo_fib_rec[n] = result 
     return result 
 
-# gcd functions
-def gcd_iter(a, b):
+def gcd_iter(a: int, b: int):
     """
     A function that returns the greatest common divisor of two integers a and b 
     using an iterative version of Euclid's algorithm. A and b are both made 
@@ -138,7 +136,7 @@ def gcd_iter(a, b):
         a, b = b, a % b
     return a
     
-def gcd_rec(a, b): # Function that returns the greatest common divisor of two numbers
+def gcd_rec(a: int, b: int): 
     """
     A function that returns the greatest common divisor of two numbers a and b
     using a recursive approach of Euclid's algorithm, similar to the function 
