@@ -17,6 +17,8 @@ def test_factorial_iter():
         factorial_iter(-1)
     with pytest.raises(TypeError, match="Input must be an integer!"):
         factorial_iter('x')
+    with pytest.raises(ValueError, match="Number must be provided!"):
+        factorial_iter(None)
     assert factorial_iter(1) == 1
 
 def test_factorial_rec():
@@ -26,9 +28,11 @@ def test_factorial_rec():
     assert factorial_rec(5) == 120
     assert factorial_rec(0) == 1
     with pytest.raises(ValueError, match="Input must be a non-negative integer!"):
-        factorial_iter(-1)
+        factorial_rec(-1)
     with pytest.raises(TypeError, match="Input must be an integer!"):
-        factorial_iter('x')
+        factorial_rec('x')
+    with pytest.raises(ValueError, match="Number must be provided!"):
+        factorial_rec(None)
     assert factorial_rec(1) == 1
 
 def test_fibonacci_iter():
@@ -44,6 +48,8 @@ def test_fibonacci_iter():
         fibonacci_iter(-1)
     with pytest.raises(TypeError, match="Input must be an integer!"):
         fibonacci_iter('x')
+    with pytest.raises(ValueError, match="Number must be provided!"):
+        fibonacci_iter(None)
 
 def test_fibonacci_rec():
     """
@@ -53,9 +59,11 @@ def test_fibonacci_rec():
     assert fibonacci_rec(0) == 0
     assert fibonacci_rec(1) == 1
     with pytest.raises(ValueError, match="Must be not be negative!"):
-        fibonacci_iter(-1)
+        fibonacci_rec(-1)
     with pytest.raises(TypeError, match="Input must be an integer!"):
-        fibonacci_iter('x')
+        fibonacci_rec('x')
+    with pytest.raises(ValueError, match="Number must be provided!"):
+        fibonacci_rec(None)
 
 def test_gcd_iter():
     """

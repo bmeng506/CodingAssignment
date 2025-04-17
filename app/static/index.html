@@ -11,10 +11,18 @@
     <p>
         Select a function and try it out!
     </p>
-
+    
     <div>
-        <h3>Factorial</h3>
+        <h3>
+            <span class="tip-container">
+              <span class="tip-title">Factorial</span>
+              <span class="tip-text">
+                Calculates n! = n × (n-1) × ... × 1.
+              </span>
+            </span>
+          </h3>
         <input type="number" id="factorial-input" placeholder="Enter a number">
+        <br>
         <label>
             <input type="checkbox" id="factorial-rec" checked> Recursive?
         </label><br>
@@ -24,18 +32,44 @@
         <p id="factorial-result"></p>
     </div>
     <div>
-        <h3>Fibonacci</h3>
+        <h3>
+            <span class="tip-container">
+                <span class="tip-title">Fibonacci</span>
+                <span class="tip-text">
+                    Calculates the nth Fibonacci number in the Fibonacci sequence.
+                </span>
+            </span>
+        </h3>
         <input type="number" id="fibonacci-input" placeholder="Enter a number">
+        <br>
         <label>
             <input type="checkbox" id="fibonacci-rec" checked> Recursive?
         </label><br>
+        <label>
+            <span class="tip-container">
+                <span class="tip-subtitle">
+                    <input type="checkbox" id="fibonacci-memo" checked>
+                    Memoization?
+                </span>
+                <span class="tip-text">
+                    Stores previously calculated Fibonacci numbers to speed up calculations.
+                </span>
+            </span>
+        </label> <br>
         <button onclick= "getFibonacci()" id="fibonacciButton">
             Calculate Fibonacci Number
         </button>
         <p id="fibonacci-result"></p>
     </div>
     <div>
-        <h3>Greatest Common Divisor</h3>
+        <h3>
+            <span class="tip-container">
+                <span class="tip-title">Greatest Common Divisor</span>
+                <span class="tip-text">
+                    Finds the largest number that divides both numbers.
+                </span>
+            </span>
+        </h3>
         <input type="number" id="gcd-a" placeholder="Enter first number" required>
         <input type="number" id="gcd-b" placeholder="Enter second number" required>
         <br>

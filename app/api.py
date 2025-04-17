@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+import time
 from src.functions import *
 
 """
@@ -8,6 +9,9 @@ This file uses FastAPI to create APIs that connect the Python backend code to an
 HTML/CSS webpage for full functionality.
 """
 
+"""
+This creates the FastAPI app with the title and description. 
+"""
 app = FastAPI(
     title="MathPath API", 
     description="Explore math functions with FastAPI"
@@ -15,8 +19,7 @@ app = FastAPI(
 
 
 app.mount("/static", StaticFiles(directory="app/static", 
-                                 html=True), 
-                                 name="static")
+                                 html=True))
 
 @app.get("/")
 def read_index():
@@ -24,26 +27,44 @@ def read_index():
 
 @app.get("/api")
 def root():
-    return {"message": "Welcome to the MathPath API! Explore math functions."}
+    return {"message": "Welcome to the MathPath API. Explore math functions."}
 
 @app.get("/factorial")
-def get_factorial(n: int, recursive: bool = False):
+def get_factorial(n: str, recursive: bool = False):
+    start_time = time.time()
+    if not n:
+        raise HTTPException(status_code=400, detail="Number must be provided!")
     try:
-        result = factorial_rec(n) if recursive else factorial_iter(n)
-        return {"number": n, "factorial": result, "recursive": recursive}
+        n_int = int(n)
+        result = factorial_rec(n_int) if recursive else factorial_iter(n_int)
     except (ValueError, TypeError) as e:
         raise HTTPException(status_code=400, detail=str(e))
     
+    runtime = round((time.time() - start_time) * 1000, 4)
+
+    return {"number": n, 
+            "factorial": result, 
+            "recursive": recursive,
+            "runtime": runtime}
+
+    
 @app.get("/fibonacci")
-def get_fibonacci(n: int, recursive: bool = False):
+def get_fibonacci(n: str, recursive: bool = False, memo: bool = False):
+    start_time = time.time()
+    if not n:
+        raise HTTPException(status_code=400, detail="Number must be provided!")
     try:
-        result = fibonacci_rec(n) if recursive else fibonacci_iter(n)
-        return {"number": n, "fibonacci": result, "recursive": recursive}
+        n_int = int(n)
+        result = fibonacci_rec(n_int, memo) if recursive else fibonacci_iter(n_int)
     except (ValueError, TypeError) as e:
         raise HTTPException(status_code=400, detail=str(e))
+    runtime = round((time.time() - start_time) * 1000, 4)
+    return {"number": n, "fibonacci": result, "recursive": recursive, "runtime": runtime}
+
     
 @app.get("/gcd")
 def get_gcd(a: str = None, b: str = None, recursive: bool = False):
+    start_time = time.time()
     if not a or not b:
         raise HTTPException(status_code=400,
                              detail="Both numbers must be provided!")
@@ -55,7 +76,8 @@ def get_gcd(a: str = None, b: str = None, recursive: bool = False):
                             detail="Inputs must be integers!")
     try:
         result = gcd_rec(a_int, b_int) if recursive else gcd_iter(a_int, b_int)
-        return {"a": a_int, "b": b_int, "gcd": result, "recursive": recursive}
+        runtime = round((time.time() - start_time) * 1000, 4)
+        return {"a": a_int, "b": b_int, "gcd": result, "recursive": recursive, "runtime": runtime}
     except (ValueError, TypeError) as e:
         raise HTTPException(status_code=400, detail=str(e))
 

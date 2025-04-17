@@ -14,7 +14,6 @@ h1 {
 
 p {
     font-size: 1.1rem;
-    color: #555;
 }
 
 div {
@@ -71,4 +70,54 @@ p[id$="-result"] {
     input[type="number"] {
         width: 90%;
     }
+}
+
+.tip-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+.tip-title {
+    font-size: 1.2rem;
+    margin-left: 4px;
+    cursor: help;
+}
+
+.tip-subtitle {
+    font-size: 1rem;
+    margin-left: 4px;
+    cursor: help;
+}
+
+.tip-text {
+    visibility: hidden;
+    width: 230px;
+    background-color: #414141;
+    color: #ffffff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    translate: -50%;
+    opacity: 0;
+    font-size: 0.85rem;
+    transition: opacity 0.2s ease-in;
+}
+
+.tip-container:hover .tip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+p.result-fail {
+    color: #d70000;
+    font-weight: bold;
+}
+  
+p.result-success {
+    color: #000000;
+    font-weight: bold;
 }

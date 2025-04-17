@@ -59,6 +59,8 @@ def fibonacci_iter(n):
     The function throws a TypeError if n is not an integer and a ValueError if 
     n is a negative integer.
     """
+    if n is None:
+        raise ValueError('Number must be provided!')
     if not isinstance(n, int):
         raise TypeError('Input must be an integer!')
     if n < 0:
@@ -74,7 +76,7 @@ def fibonacci_iter(n):
 
 memo_fib_rec = {} # Dictionary to store previously calculated fibonacci numbers
 
-def fibonacci_rec(n, memo=False): # Function that returns nth number in the fibonacci sequence
+def fibonacci_rec(n, memo): # Function that returns nth number in the fibonacci sequence
     """
     A function that returns the nth number in the fibonacci sequence using a 
     recursive approach. It calls itself using n-1 and n-2, adding the two 
@@ -87,7 +89,8 @@ def fibonacci_rec(n, memo=False): # Function that returns nth number in the fibo
     values. This is mostly used in the application to show the effectiveness of
     memoization in shrinking down time.      
     """
-
+    if n is None:
+        raise ValueError('Number must be provided!')
     if not isinstance(n, int):
         raise TypeError('Input must be an integer!')
     if n < 0:
@@ -98,7 +101,7 @@ def fibonacci_rec(n, memo=False): # Function that returns nth number in the fibo
     elif n <= 1:
         return n
     else:
-        result = fibonacci_rec(n-1) + fibonacci_rec(n-2)
+        result = fibonacci_rec(n-1, memo) + fibonacci_rec(n-2, memo)
     memo_fib_rec[n] = result 
     return result 
 
