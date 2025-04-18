@@ -53,8 +53,13 @@ To run and launch the web app locally:
 ```bash
 uvicorn app.api:app --reload
 ```
+or run the `main.py` file.
 
-# Part II: Clarity LLM
+# Part II: Clarity
+
+Look into the ClarityLLM folder for more information, where you will find the `clarity_guidelines.md`, `clarity_prompt.md`, `bad_example.py`, and `clarity_response.md` files.
+
+Clarity is a friendly and helpful LLM-powered Python style checker!
 
 ## About the Creator
 Hi! I'm Brian, a first-year university student studying Computer Science and Mathematical Economics. I am passionate about computer science, math, and building new things :)
