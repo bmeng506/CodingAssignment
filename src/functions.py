@@ -217,5 +217,3 @@ def gcd_rec(a: int, b: int):
         return a or b
     
     return gcd_rec(b, a % b) # Recursion of b, remainder of a divided by b.
-
-print(memo_fib_rec)
