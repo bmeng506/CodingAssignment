@@ -30,7 +30,7 @@ python -m venv venv
 source venv/bin/activate   # Mac/Linux
 venv\Scripts\activate      # Windows
 ```
-  If `python -m venv venv` does not work, try:
+- If `python -m venv venv` does not work, try:
 ```bash
 python3 -m venv venv
 ```
