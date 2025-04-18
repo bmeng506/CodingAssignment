@@ -77,5 +77,5 @@ This project sprung out of a coding challenge and demonstrates not only how I co
 ### Contact
 Feel free to reach out or connect with me!\
 Email: bmeng@sas.upenn.edu\
-Github: @bmeng506\
+Github: [@bmeng506\](https://github.com/bmeng506)\
 LinkedIn: https://www.linkedin.com/in/bmeng506/
