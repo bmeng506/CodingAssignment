@@ -66,7 +66,7 @@ Look into the ClarityLLM folder for more information, where you will find the `c
 Clarity is a friendly and helpful LLM-powered Python style checker!
 
 ## About the Creator
-Hi! I'm Brian, a first-year university student studying Computer Science and Mathematical Economics. I am passionate about computer science, math, and building new things :)
+Hi! I'm Brian, a second-year university student studying Computer Science and Mathematical Economics. I am passionate about computer science, math, and building new things :)
 
 The Web App reflects my love for programming and math. I had a lot of fun building this project and hope it is just as fun to use!
 
